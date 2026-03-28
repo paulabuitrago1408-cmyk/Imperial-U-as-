@@ -112,11 +112,11 @@
             font-size: 1.5rem;
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section Renovada --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(250, 218, 221, 0.4)), 
-                        url('WhatsApp Image 2026-03-28 at 7.41.11 AM (8).jpeg');
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url('https://i.ibb.co/B2cFMYNt/Whats-App-Image-2026-03-28-at-7-41-11-AM-3.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -126,118 +126,135 @@
             text-align: center;
             padding: 0 10%;
             margin-top: 80px;
+            color: white;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--blanco), transparent);
         }
 
         .hero h1 {
             font-family: var(--font-serif);
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            color: var(--dorado);
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            color: var(--dorado-suave);
             margin-bottom: 20px;
-            text-shadow: 1px 1px 4px rgba(255,255,255,0.9);
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.6);
             line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 40px;
-            color: #222;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.3);
-            padding: 10px;
-            border-radius: 8px;
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 45px;
+            color: white;
+            font-weight: 400;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
         }
 
         .btn {
-            padding: 15px 35px;
+            padding: 18px 45px;
             text-transform: uppercase;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             transition: var(--transition);
             display: inline-block;
             cursor: pointer;
             border: none;
+            position: relative;
+            z-index: 10;
         }
 
         .btn-primary { background: var(--dorado); color: white; border: 1px solid var(--dorado); }
-        .btn-outline { background: white; color: var(--dorado); border: 1px solid var(--dorado); margin-left: 10px; }
+        .btn-outline { background: transparent; color: white; border: 1px solid white; margin-left: 15px; }
 
-        .btn-primary:hover { background: #b8952d; color: white; }
+        .btn-primary:hover { background: #b8952d; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-outline:hover { background: white; color: var(--dorado); transform: translateY(-5px); }
 
         /* --- Secciones --- */
-        section { padding: 80px 10%; opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        section { padding: 100px 10%; opacity: 0; transform: translateY(30px); transition: 1.2s all cubic-bezier(0.22, 1, 0.36, 1); }
         section.visible { opacity: 1; transform: translateY(0); }
 
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-family: var(--font-serif); font-size: 2.8rem; color: var(--dorado); }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-family: var(--font-serif); font-size: 3.2rem; color: var(--dorado); margin-bottom: 15px; }
+        .section-header p { font-size: 1.1rem; color: #888; text-transform: uppercase; letter-spacing: 2px; }
 
         /* --- Servicios --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
         .service-card {
             background: var(--crema);
-            padding: 20px;
+            padding: 30px;
             text-align: center;
             border: 1px solid var(--rosa);
             transition: var(--transition);
+            position: relative;
         }
 
         .service-card .img-container {
             width: 100%;
-            height: 250px;
+            height: 280px;
             overflow: hidden;
-            margin-bottom: 20px;
-            border: 2px solid var(--dorado-suave);
+            margin-bottom: 25px;
+            border: 1px solid var(--dorado-suave);
         }
 
         .service-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
 
-        .service-card:hover img {
-            transform: scale(1.05);
-        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .service-card:hover img { transform: scale(1.1); }
 
-        .service-card h3 { font-family: var(--font-serif); margin-bottom: 10px; color: var(--texto); }
+        .service-card h3 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 15px; color: var(--texto); }
 
         /* --- Nosotros --- */
         .about-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
         }
 
         .about-img {
             width: 100%;
-            height: 500px;
-            background-image: url('WhatsApp Image 2026-03-28 at 7.41.11 AM (4).jpeg');
+            height: 600px;
+            background-image: url('https://i.ibb.co/tp4rhp77/Whats-App-Image-2026-03-28-at-7-41-11-AM-4.jpg');
             background-size: cover;
             background-position: center;
-            border: 15px solid var(--crema);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 20px solid var(--crema);
+            box-shadow: 20px 20px 0px var(--dorado-suave);
         }
 
         /* --- Galería --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .gallery-item {
-            height: 350px;
+            height: 400px;
             overflow: hidden;
-            border: 2px solid var(--rosa);
+            border: 1px solid var(--rosa);
             position: relative;
         }
 
@@ -248,110 +265,58 @@
             transition: var(--transition);
         }
 
-        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover img { transform: scale(1.08); filter: brightness(0.85); }
 
-        /* --- Contacto Mejorado --- */
+        /* --- Contacto --- */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 50px;
+            gap: 60px;
             background: var(--blanco);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-            padding: 50px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.07);
+            padding: 70px;
             border: 1px solid var(--rosa);
         }
 
-        .contact-info h3 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            color: var(--dorado);
-            margin-bottom: 25px;
-        }
+        .contact-info h3 { font-family: var(--font-serif); font-size: 2.5rem; color: var(--dorado); margin-bottom: 35px; }
+        .contact-info p { margin-bottom: 25px; display: flex; align-items: center; gap: 20px; font-size: 1rem; }
+        .contact-info i { width: 45px; height: 45px; background: var(--dorado-suave); color: var(--dorado); display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.1rem; }
 
-        .contact-info p {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 0.95rem;
-        }
-
-        .contact-info i {
-            width: 35px;
-            height: 35px;
-            background: var(--dorado-suave);
-            color: var(--dorado);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 0.9rem;
-        }
-
-        .contact-form form {
-            display: grid;
-            gap: 20px;
-        }
-
-        .input-group {
-            position: relative;
-        }
-
-        .contact-form input, 
-        .contact-form select, 
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px 20px;
-            border: 1px solid #ddd;
-            background-color: var(--crema);
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            outline: none;
-            transition: var(--transition);
-            border-radius: 0;
-        }
-
-        .contact-form input:focus, 
-        .contact-form select:focus, 
-        .contact-form textarea:focus {
-            border-color: var(--dorado);
-            background-color: var(--blanco);
-        }
-
-        .contact-form label {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            color: var(--dorado);
-        }
+        .contact-form form { display: grid; gap: 25px; }
+        .contact-form label { display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; color: var(--dorado); }
+        .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 18px 25px; border: 1px solid #eee; background-color: var(--crema); font-family: var(--font-sans); font-size: 0.95rem; outline: none; transition: var(--transition); }
+        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--dorado); background-color: var(--blanco); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1); }
 
         /* --- Footer --- */
-        footer { background: var(--crema); padding: 60px 10%; text-align: center; border-top: 1px solid var(--rosa); }
+        footer { background: #1a1a1a; padding: 80px 10%; text-align: center; color: white; }
+        footer .logo { color: var(--dorado-suave); font-size: 2.5rem; margin-bottom: 30px; }
+        footer p { opacity: 0.6; font-size: 0.9rem; letter-spacing: 1px; }
 
         /* --- WhatsApp --- */
         .whatsapp-btn {
-            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            position: fixed; bottom: 40px; right: 40px; width: 70px; height: 70px;
             background: #25D366; color: white; border-radius: 50%;
             display: flex; justify-content: center; align-items: center;
-            font-size: 30px; z-index: 2000; animation: pulse 2s infinite; text-decoration: none;
+            font-size: 35px; z-index: 2000; animation: pulse 2s infinite; text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
         }
 
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         @media (max-width: 992px) {
-            .contact-container { grid-template-columns: 1fr; padding: 30px; }
-            .about-container { grid-template-columns: 1fr; }
-            .about-img { height: 350px; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 20px; border-bottom: 1px solid var(--rosa); }
+            .contact-container { grid-template-columns: 1fr; padding: 40px; }
+            .about-container { grid-template-columns: 1fr; gap: 40px; }
+            .about-img { height: 400px; box-shadow: 10px 10px 0px var(--dorado-suave); }
+            .hero h1 { font-size: 3.5rem; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
             .nav-links.active { display: flex; }
             .hamburger { display: block; }
+            .btn-group { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; }
+            .btn-outline { margin-left: 0; }
         }
     </style>
 </head>
@@ -377,39 +342,39 @@
 
     <section id="inicio" class="hero visible" style="transform:none; opacity:1;">
         <h1>Elegancia Imperial</h1>
-        <p>Realzamos tu belleza natural con servicios exclusivos de manicura, peinado y estética integral.</p>
+        <p>Experiencia de lujo y cuidado personal en manos expertas. Descubre el arte de resaltar tu belleza en San Gil.</p>
         <div class="btn-group">
-            <a href="#contacto" class="btn btn-primary">Agendar Cita</a>
-            <a href="#servicios" class="btn btn-outline">Ver Catálogo</a>
+            <a href="#contacto" class="btn btn-primary">Agendar Mi Cita</a>
+            <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
         </div>
     </section>
 
     <section id="servicios">
         <div class="section-header">
-            <h2>Nuestros Servicios</h2>
-            <p>Especialistas en resaltar lo mejor de ti</p>
+            <p>Lo que hacemos por ti</p>
+            <h2>Servicios Exclusivos</h2>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="img-container">
-                    <img src="WhatsApp Image 2026-03-28 at 7.41.11 AM (7).jpeg" alt="[Imagen de Uñas en Polígel]">
+                    <img src="https://i.ibb.co/67bNhT0f/Whats-App-Image-2026-03-28-at-7-41-11-AM-7.jpg" alt="[Imagen de Uñas en Polígel]">
                 </div>
                 <h3>Uñas en Polígel</h3>
-                <p>Acabados artísticos y máxima durabilidad para tus manos.</p>
+                <p>Nuestra especialidad: durabilidad extrema y diseños personalizados que reflejan tu estilo.</p>
             </div>
             <div class="service-card">
                 <div class="img-container">
-                    <img src="WhatsApp Image 2026-03-28 at 7.41.11 AM (5).jpeg" alt="[Imagen de Peinados Elegantes]">
+                    <img src="https://i.ibb.co/bjWWdkhL/Whats-App-Image-2026-03-28-at-7-41-11-AM-5.jpg" alt="[Imagen de Peinados Elegantes]">
                 </div>
-                <h3>Peinados</h3>
-                <p>Desde estilos clásicos hasta las tendencias más modernas.</p>
+                <h3>Peinados & Trenzas</h3>
+                <p>Desde recogidos sofisticados hasta trenzas artísticas para cualquier evento especial.</p>
             </div>
             <div class="service-card">
                 <div class="img-container">
-                    <img src="WhatsApp Image 2026-03-28 at 7.41.11 AM (1).jpeg" alt="[Imagen de Lifting de Pestañas]">
+                    <img src="https://i.ibb.co/fdVRTxS3/Whats-App-Image-2026-03-28-at-7-41-11-AM-1.jpg" alt="[Imagen de Lifting de Pestañas]">
                 </div>
-                <h3>Lifting de Pestañas</h3>
-                <p>Realza el volumen y la curvatura de tu mirada naturalmente.</p>
+                <h3>Lifting & Cejas</h3>
+                <p>Potencia tu mirada con curvaturas naturales y un diseño de cejas perfecto.</p>
             </div>
         </div>
     </section>
@@ -418,11 +383,15 @@
         <div class="about-container">
             <div class="about-img"></div>
             <div class="about-content">
-                <h3>Excelencia y Detalle</h3>
-                <p>En Imperial Studio de Belleza, cada detalle cuenta. Nos especializamos en brindar una experiencia relajante mientras transformamos tu imagen con los mejores productos del mercado.</p>
-                <div style="display: flex; gap: 30px; margin-top: 30px;">
-                    <div><h4 style="color: var(--dorado); font-size: 2.5rem;">+1k</h4><p>Clientes</p></div>
-                    <div><h4 style="color: var(--dorado); font-size: 2.5rem;">100%</h4><p>Satisfacción</p></div>
+                <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                    <p>Nuestra Historia</p>
+                    <h2 style="font-size: 2.8rem;">Excelencia y Pasión</h2>
+                </div>
+                <p>En Imperial Studio de Belleza creemos que cada cliente merece un trato real. En San Gil, Santander, nos hemos convertido en el referente de estética para quienes buscan calidad, higiene y los mejores productos.</p>
+                <p style="margin-top: 20px;">Nuestro equipo está en constante formación para ofrecerte siempre las últimas tendencias internacionales en belleza y bienestar.</p>
+                <div style="display: flex; gap: 40px; margin-top: 40px; border-top: 1px solid var(--rosa); padding-top: 30px;">
+                    <div><h4 style="color: var(--dorado); font-size: 2.8rem; font-family: var(--font-serif);">+1k</h4><p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Clientes Felices</p></div>
+                    <div><h4 style="color: var(--dorado); font-size: 2.8rem; font-family: var(--font-serif);">100%</h4><p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Calidad Garantizada</p></div>
                 </div>
             </div>
         </div>
@@ -430,64 +399,67 @@
 
     <section id="galeria">
         <div class="section-header">
-            <h2>Nuestros Trabajos</h2>
-            <p>Una muestra de nuestra dedicación y arte</p>
+            <p>Nuestro Portfolio</p>
+            <h2>Galería de Arte</h2>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="WhatsApp Image 2026-03-28 at 7.41.11 AM (3).jpeg" alt="[Imagen de Diseño de Uñas]"></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-03-28 at 7.41.11 AM (6).jpeg" alt="[Imagen de Peinado de Gala]"></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-03-28 at 7.41.11 AM (2).jpeg" alt="[Imagen de Pedicura]"></div>
-            <div class="gallery-item"><img src="WhatsApp Image 2026-03-28 at 7.41.11 AM (8).jpeg" alt="[Imagen de Detalles Manicura]"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/20svwtWW/Whats-App-Image-2026-03-28-at-7-41-11-AM-6.jpg" alt="[Imagen de Peinado de Gala]"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/0yPPHmGB/Whats-App-Image-2026-03-28-at-7-41-11-AM-2.jpg" alt="[Imagen de Pedicura]"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/p6Wkwjft/Whats-App-Image-2026-03-28-at-7-41-11-AM-8.jpg" alt="[Imagen de Detalles Manicura]"></div>
+            <div class="gallery-item"><img src="https://i.ibb.co/67bNhT0f/Whats-App-Image-2026-03-28-at-7-41-11-AM-7.jpg" alt="[Imagen de Uñas Esculpidas]"></div>
         </div>
     </section>
 
     <section id="contacto">
-        <div class="section-header">
-            <h2>¿Lista para Brillar?</h2>
-            <p>Déjanos tus datos y nos pondremos en contacto contigo</p>
-        </div>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Visítanos</h3>
+                <h3>Reserva Ahora</h3>
+                <p><i class="fas fa-map-marker-alt"></i> San Gil, Santander</p>
                 <p><i class="fas fa-phone"></i> +57 312 520 2941</p>
                 <p><i class="fab fa-instagram"></i> @ImperialStudioDeBelleza</p>
-                <p><i class="fas fa-map-marker-alt"></i> San Gil, Santander</p>
-                <p><i class="fas fa-clock"></i> Lun - Sáb: 9am a 7pm</p>
+                <p><i class="fas fa-clock"></i> Lunes a Sábado: 9:00 AM - 7:00 PM</p>
             </div>
             <div class="contact-form">
                 <form id="appointmentForm">
-                    <div class="input-group">
-                        <label>Nombre Completo</label>
-                        <input type="text" placeholder="Ej. Ana García" required>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="input-group">
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="input-group">
+                            <label>WhatsApp</label>
+                            <input type="tel" placeholder="Tu celular" required>
+                        </div>
                     </div>
                     <div class="input-group">
-                        <label>WhatsApp / Teléfono</label>
-                        <input type="tel" placeholder="Ej. 312 000 0000" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Servicio deseado</label>
+                        <label>Servicio de Interés</label>
                         <select required>
-                            <option value="">Selecciona una opción</option>
-                            <option>Uñas (Polígel / Semipermanente)</option>
-                            <option>Peinados / Trenzas</option>
-                            <option>Lifting de Pestañas / Cejas</option>
-                            <option>Pedicura / Spa de Pies</option>
-                            <option>Keratina / Tratamiento Capilar</option>
+                            <option value="">Selecciona un servicio</option>
+                            <option>Manicura (Polígel / Semipermanente)</option>
+                            <option>Pedicura Spa</option>
+                            <option>Peinado o Trenzas</option>
+                            <option>Lifting de Pestañas</option>
+                            <option>Diseño de Cejas</option>
+                            <option>Keratina / Alisados</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label>Mensaje Adicional</label>
-                        <textarea rows="3" placeholder="Cuéntanos lo que necesitas..."></textarea>
+                        <label>Mensaje o Preferencia</label>
+                        <textarea rows="4" placeholder="¿Tienes alguna preferencia de fecha o diseño?"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar Solicitud de Cita</button>
+                    <button type="submit" class="btn btn-primary">Solicitar Información por WhatsApp</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="logo" style="margin-bottom: 20px;">Imperial Studio</div>
-        <p>&copy; 2026 Imperial Studio de Belleza. San Gil, Santander. Todos los derechos reservados.</p>
+        <div class="logo">Imperial Studio</div>
+        <div style="margin-bottom: 40px; display: flex; justify-content: center; gap: 20px;">
+            <a href="https://instagram.com/ImperialStudioDeBelleza" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573125202941" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2026 Imperial Studio de Belleza. San Gil, Santander. La excelencia en cada detalle.</p>
     </footer>
 
     <a href="https://wa.me/573125202941" class="whatsapp-btn" target="_blank">
@@ -495,26 +467,52 @@
     </a>
 
     <script>
-        // Observador para animaciones al hacer scroll
+        // Animaciones al hacer scroll mejoradas
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
         document.querySelectorAll('section').forEach(s => observer.observe(s));
 
-        // Menú hamburguesa para móviles
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Menú responsive
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
         });
 
-        // Simulación de envío
-        document.getElementById('appointmentForm').addEventListener('submit', (e) => {
+        // Cerrar menú al hacer click en un link (móvil)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                document.querySelector('.hamburger i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        // Formulario a WhatsApp (funcional)
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias! Hemos recibido tu solicitud. Te contactaremos por WhatsApp a la brevedad para confirmar tu cita.');
+            const nombre = this.querySelectorAll('input')[0].value;
+            const phone = this.querySelectorAll('input')[1].value;
+            const servicio = this.querySelector('select').value;
+            const mensaje = this.querySelector('textarea').value;
+            
+            const text = `Hola Imperial Studio! Mi nombre es ${nombre}. Me gustaría agendar o recibir información sobre el servicio de ${servicio}. ${mensaje}`;
+            const encodedText = encodeURIComponent(text);
+            
+            window.open(`https://wa.me/573125202941?text=${encodedText}`, '_blank');
         });
     </script>
 </body>
